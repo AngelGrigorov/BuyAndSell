@@ -122,7 +122,6 @@ a:hover{
 .section-title h2 {
 	color:#000;
 	font-size: 44px;
-	text-transform: uppercase;
 	position: relative;
 	font-weight: 700;
 }
@@ -145,7 +144,6 @@ a:hover{
 }
 .breadcrumb .breadcrumb-text h2{
 	color:#42BC7F;
-	text-transform:capitalize;
 	padding-bottom:10px;
 	border-bottom:5px solid #42BC7F;
 }
@@ -214,7 +212,6 @@ a:hover{
 	color: #d5d5d5;
     font-size: 14px;
     font-weight: 500;
-    text-transform: uppercase;
     padding: 25px 15px;
     position: relative;
     display: inline-block;
@@ -384,7 +381,6 @@ a:hover{
 	height: 40px;
 	color: #fff;
 	background:#42BC7F;
-	text-transform:uppercase;
 	display: inline-block;
 	line-height: 40px;
 	padding: 0 30px 0 30px;
@@ -500,7 +496,6 @@ a:hover{
 	font-size:20px;
 	color:#fff;
 	margin-bottom:10px;
-	text-transform:capitalize;
 }
 .service .single-service p{
 	color:#fffc;
@@ -546,7 +541,6 @@ a:hover{
 .skill .skill-title h4 {
 	font-size: 16px;
 	margin-bottom: 15px;
-	text-transform: capitalize;
 	font-weight: 600;
 	color:#fff;
 }
@@ -829,7 +823,7 @@ a:hover{
 	width: 140px;
 	line-height: 40px;
 	text-align: center;
-	text-transform: uppercase;
+
 	font-weight:500;
 }
 .latest-works .single-work .works-hover .more a:hover{
@@ -839,7 +833,6 @@ a:hover{
 .latest-works .single-work .works-hover h4 {
 	color: #fff;
 	font-size: 15px;
-	text-transform: uppercase;
 	position: relative;
 	-webkit-transition: all 0.4s ease;
 	-moz-transition: all 0.4s ease;
@@ -985,7 +978,6 @@ a:hover{
 	color:#fff;
 	font-size:18px;
 	display:block;
-	text-transform:capitalize;
 	margin-left: 115px;
 }
 .testimonials .owl-dots {
@@ -1063,7 +1055,7 @@ a:hover{
 	font-size:17px;
 	font-weight:600;
 	line-height: 22px;
-	text-transform:uppercase;
+
 }
 .blog .single-news .news-date span:before{
 	position:relative;
@@ -1108,7 +1100,6 @@ a:hover{
 }
 .blog .single-news .news-body h2{
 	font-size:18px;
-	text-transform:uppercase;
 	font-weight:500;
 }
 .blog .single-news .news-body h2 a{
@@ -1156,16 +1147,13 @@ a:hover{
 }
 .newslatter .news-text h4{
 	color:#42bc7f;
-	text-transform:capitalize;
 	font-weight:700;
 	font-size:20px;
-	text-transform:uppercase;
 	margin-bottom:10px;
 }
 .newslatter .news-text h2{
 	font-size:45px;
 	color:#686868;
-	text-transform:uppercase;
 	font-weight:700;
 	margin-bottom:24px;
 	margin-bottom:7px;
@@ -1219,7 +1207,6 @@ a:hover{
 	line-height: 50px;
 	color: #fff;
 	font-weight: 600;
-	text-transform: uppercase;
 	font-size: 16px;
 	-webkit-transition: all 0.4s ease;
 	-moz-transition: all 0.4s ease;
@@ -1260,7 +1247,7 @@ a:hover{
     height: 46px;
     padding-left: 10px;
 	border:1px solid #ccc;
-	text-transform:capitalize;
+
 }
 .contact .form input:hover,.contact .form input:focus{
 	border-color:#42bc7f;
@@ -1270,7 +1257,7 @@ a:hover{
 	height:200px;
     padding: 15px;
 	border:1px solid #ccc;
-	text-transform:capitalize;
+
 	/*resize:none;*/
 }
 .contact .form textarea:hover,
@@ -1284,7 +1271,6 @@ a:hover{
 	color:#42bc7f;
 	font-size:25px;
 	margin-bottom:20px;
-	text-transform:capitalize;
 }
 .contact .contact-info p {
 	color: #777;

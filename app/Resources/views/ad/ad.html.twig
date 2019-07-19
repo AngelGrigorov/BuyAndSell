@@ -1,0 +1,35 @@
+{% extends 'base.html.twig' %}
+
+{% block main %}
+    <div class="container body-content">
+        <div class="row">
+            <div class="col-md-12">
+                <article>
+                    <header>
+                        <h2>{{ ad.title }}</h2>
+                    </header>
+
+                    <p>
+                        {{ ad.content }}
+                    </p>
+
+                    <small class="author">
+                        {{ ad.author.fullName }}
+                    </small>
+
+                    <footer>
+                        <div class="pull-right">
+                            {% if app.getUser() and (app.getUser().isAuthor(ad) or app.getUser().isAdmin()) %}
+                            <a class="btn btn-success btn-xs" href="{{ path('ad_edit', {'id': ad.id}) }}">Edit</a>
+                            <a class="btn btn-danger btn-xs" href="{{ path('ad_delete', {'id': ad.id}) }}">Delete</a>
+                            {% endif %}
+                            <a class="btn btn-default btn-xs" href="{{ path('blog_index') }}">back &raquo;</a>
+                        </div>
+                    </footer>
+                </article>
+            </div>
+        </div>
+    </div>
+
+{% endblock %}
+
