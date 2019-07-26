@@ -30,11 +30,18 @@ class Ad
     private $title;
 
     /**
+     * @var float
+     *
+     * @ORM\Column(name="price", type="float")
+     */
+    private $price;
+    /**
      * @var string
      *
-     * @ORM\Column(name="content", type="string", length=255)
+     * @ORM\Column(name="info", type="string", length=255)
      */
-    private $content;
+private $info;
+
 
     /**
      * @var DateTime
@@ -42,10 +49,6 @@ class Ad
      * @ORM\Column(name="date", type="datetime")
      */
     private $date;
-    /**
-     * @var string
-     */
-private $summary;
     /**
      * @var int
      *
@@ -60,7 +63,18 @@ private $authorId;
      */
 
 private $author;
-
+    /**
+     * @var string
+     *
+     * @ORM\Column(name="imgURL", type="string")
+     */
+private $imgURL;
+    /**
+     * @var string
+     *
+     * @ORM\Column(name="location",type="string")
+     */
+private $location;
     /**
      * Ad constructor.
      * @throws \Exception
@@ -108,24 +122,6 @@ private $author;
         return $this;
     }
     /**
-     * @return string
-     */
-    public function getSummary()
-    {
-        if($this->summary === null){
-            $this->setSummary();
-        }
-        return $this->summary;
-    }
-
-    /**
-     * @param string
-     */
-    public function setSummary()
-    {
-        $this->summary = substr($this->getContent(), 0, strlen($this->getContent()) / 2). '...';
-    }
-    /**
      * Get id
      *
      * @return int
@@ -160,27 +156,27 @@ private $author;
     }
 
     /**
-     * Set content
+     * Set price
      *
-     * @param string $content
+     * @param float $price
      *
      * @return Ad
      */
-    public function setContent($content)
+    public function setPrice($price)
     {
-        $this->content = $content;
+        $this->price = $price;
 
         return $this;
     }
 
     /**
-     * Get content
+     * Get price
      *
-     * @return string
+     * @return float
      */
-    public function getContent()
+    public function getPrice()
     {
-        return $this->content;
+        return $this->price;
     }
 
     /**
@@ -206,5 +202,53 @@ private $author;
     {
         return $this->date;
     }
+
+    /**
+     * @return string
+     */
+    public function getImgURL()
+    {
+        return $this->imgURL;
+    }
+
+    /**
+     * @param string $imgURL
+     */
+    public function setImgURL($imgURL)
+    {
+        $this->imgURL = $imgURL;
+    }
+    /**
+     * @return string
+     */
+    public function getInfo()
+    {
+        return $this->info;
+    }
+
+    /**
+     * @param string $info
+     */
+    public function setInfo($info)
+    {
+        $this->info = $info;
+    }
+
+    /**
+     * @return string
+     */
+    public function getLocation()
+    {
+        return $this->location;
+    }
+
+    /**
+     * @param string $location
+     */
+    public function setLocation($location)
+    {
+        $this->location = $location;
+    }
+
 }
 

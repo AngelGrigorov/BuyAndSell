@@ -2,6 +2,7 @@
 
 namespace FindYourCarBundle\Form;
 
+
 use FindYourCarBundle;
 use Symfony\Component\Form\Extension\Core\Type\TextType;
 use Symfony\Component\Form\AbstractType;
@@ -19,7 +20,10 @@ class AdType extends AbstractType
     {
         $builder
             ->add('title', TextType::class)
-            ->add('content', TextType::class);
+            ->add('price', TextType::class)
+            ->add('info', TextType::class)
+        ->add('imgURL', TextType::class)
+        ->add('location',TextType::class);
     }
 
     public function configureOptions(OptionsResolver $resolver)
