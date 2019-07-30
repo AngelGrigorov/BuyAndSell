@@ -19,7 +19,8 @@
                                     <p><b>Location: </b> {{ ad.location }}</p>
                                     <p><b>Information: </b> {{ ad.info }}</p>
                                     <p><b>Price: </b>{{ ad.price }}€</p>
-                                    <p><b>Dealer: </b>{{ ad.author.fullName }}</p>
+                                    <p><b>User: </b>{{ ad.author.fullName }}</p>
+                                    <p><b>Contact: </b>{{ ad.author.number }}</p>
                                 </div>
                             </div>
                             <div class="col-md-8 col-sm-12 col-xs-12">
@@ -35,7 +36,7 @@
                             <a class="btn btn-success btn-xs" href="{{ path('ad_edit', {'id': ad.id}) }}">Edit</a>
                             <a class="btn btn-danger btn-xs" href="{{ path('ad_delete', {'id': ad.id}) }}">Delete</a>
                         {% endif %}
-                        <a class="btn btn-default btn-xs" href="{{ path('blog_index') }}">back &raquo;</a>
+                        <a class="btn btn-default btn-xs" href="{{ path('index') }}">back &raquo;</a>
 
                     </footer>
                 </div>

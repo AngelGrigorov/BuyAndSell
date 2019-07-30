@@ -49,6 +49,11 @@ class User implements UserInterface
     private $ad;
 
     /**
+     * @return ArrayCollection
+     */
+
+
+    /**
      * @return \Doctrine\Common\Collections\Collection
      */
     public function getAd()
@@ -72,6 +77,29 @@ class User implements UserInterface
      *     )
      */
     private $roles;
+
+    /**
+     * @var string
+     *
+     * @ORM\Column(name="number", type="string", length=12)
+     */
+    private $number;
+
+    /**
+     * @return mixed
+     */
+    public function getNumber()
+    {
+        return $this->number;
+    }
+
+    /**
+     * @param mixed $number
+     */
+    public function setNumber($number)
+    {
+        $this->number = $number;
+    }
 
 
    public function __construct()

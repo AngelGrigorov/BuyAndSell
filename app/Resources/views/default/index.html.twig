@@ -26,7 +26,7 @@
                                 <h3><a href="#">{{ ad.title }}</a></h3>
                                 <h2>Price : {{ ad.price }}€</h2>
                                 <p class="author">
-                                    Dealer: {{ ad.author.fullName }}
+                                    User: {{ ad.author.fullName }}
                                 </p>
                                 <a href="{{ path('ad_view',{'id': ad.id}) }}" class="btn">Read More<i class="fa fa-angle-double-right"></i></a>
                             </div>

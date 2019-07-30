@@ -20,7 +20,8 @@ $builder
         'type' => PasswordType::class,
         'first_options' => array('label' => 'Password'),
         'second_options' => array('label' => 'Repeat Password')
-    ));
+    ))
+->add('number', TextType::class);
     }
 
     public function configureOptions(OptionsResolver $resolver)

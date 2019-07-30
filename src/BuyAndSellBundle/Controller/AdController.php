@@ -45,7 +45,7 @@ class AdController extends Controller
             $em = $this->getDoctrine()->getManager();
             $em->persist($ad);
             $em->flush();
-            return $this->redirectToRoute('blog_index');
+            return $this->redirectToRoute('index');
         }
 
         return $this->render('ad/create.html.twig',
@@ -76,13 +76,13 @@ class AdController extends Controller
     {
         $ad = $this->getDoctrine()->getRepository(Ad::class)->find($id);
         if ($ad === null) {
-            return $this->redirectToRoute('blog_index');
+            return $this->redirectToRoute('index');
         }
         $currentUser = $this->getUser();
         /** @var User $currentUser */
         /** @var Ad $ad */
         if (!$currentUser->isAuthor($ad) && !$currentUser->isAdmin()) {
-            return $this->redirectToRoute('blog_index');
+            return $this->redirectToRoute('index');
         }
         $form = $this->createForm(AdType::class, $ad);
 
@@ -130,13 +130,13 @@ class AdController extends Controller
     {
         $ad = $this->getDoctrine()->getRepository(Ad::class)->find($id);
         if ($ad === null) {
-            return $this->redirectToRoute('blog_index');
+            return $this->redirectToRoute('index');
         }
         $currentUser = $this->getUser();
         /** @var User $currentUser */
         /** @var Ad $ad */
         if (!$currentUser->isAuthor($ad) && !$currentUser->isAdmin()) {
-            return $this->redirectToRoute('blog_index');
+            return $this->redirectToRoute('index');
         }
         $form = $this->createForm(AdType::class, $ad);
         $form->handleRequest($request);
@@ -144,7 +144,7 @@ class AdController extends Controller
             $em = $this->getDoctrine()->getManager();
             $em->remove($ad);
             $em->flush();
-            return $this->redirectToRoute('blog_index');
+            return $this->redirectToRoute('index');
         }
         return $this->render('ad/delete.html.twig',
             array('ad' => $ad,
