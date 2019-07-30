@@ -1,6 +1,6 @@
 <?php
 
-namespace FindYourCarBundle\Entity;
+namespace BuyAndSellBundle\Entity;
 
 
 use Doctrine\Common\Collections\ArrayCollection;
@@ -15,7 +15,7 @@ use Symfony\Component\Security\Core\User\UserInterface;
  * User
  *
  * @ORM\Table(name="user")
- * @ORM\Entity(repositoryClass="FindYourCarBundle\Repository\UserRepository")
+ * @ORM\Entity(repositoryClass="BuyAndSellBundle\Repository\UserRepository")
  */
 class User implements UserInterface
 {
@@ -44,7 +44,7 @@ class User implements UserInterface
     /**
      * @var ArrayCollection
      *
-     * @ORM\OneToMany(targetEntity="FindYourCarBundle\Entity\Ad", mappedBy="author")
+     * @ORM\OneToMany(targetEntity="BuyAndSellBundle\Entity\Ad", mappedBy="author")
      */
     private $ad;
 
@@ -65,7 +65,7 @@ class User implements UserInterface
     /**
      * @var ArrayCollection
      *
-     * @ORM\ManyToMany(targetEntity="FindYourCarBundle\Entity\Role")
+     * @ORM\ManyToMany(targetEntity="BuyAndSellBundle\Entity\Role")
      * @JoinTable(name="users_roles",
      *     joinColumns={@JoinColumn(name="user_id", referencedColumnName="id")},
      *     inverseJoinColumns={@JoinColumn(name="role_id", referencedColumnName="id")}
@@ -221,7 +221,7 @@ class User implements UserInterface
     }
 
     /**
-     * @param \FindYourCarBundle\Entity\Ad $ad
+     * @param \BuyAndSellBundle\Entity\Ad $ad
      * @return User
      */
     public function addPost(Ad $ad)

@@ -1,10 +1,10 @@
 <?php
 
-namespace FindYourCarBundle\Controller;
+namespace BuyAndSellBundle\Controller;
 
-use FindYourCarBundle\Entity\Role;
-use FindYourCarBundle\Entity\User;
-use FindYourCarBundle\Form\UserType;
+use BuyAndSellBundle\Entity\Role;
+use BuyAndSellBundle\Entity\User;
+use BuyAndSellBundle\Form\UserType;
 use Symfony\Component\HttpFoundation\Request;
 use Symfony\Component\HttpFoundation\Response;
 use Symfony\Component\Routing\Annotation\Route;

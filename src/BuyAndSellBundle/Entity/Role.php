@@ -1,6 +1,6 @@
 <?php
 
-namespace FindYourCarBundle\Entity;
+namespace BuyAndSellBundle\Entity;
 
 use Doctrine\Common\Collections\ArrayCollection;
 use Doctrine\ORM\Mapping as ORM;
@@ -9,7 +9,7 @@ use Doctrine\ORM\Mapping as ORM;
  * Role
  *
  * @ORM\Table(name="role")
- * @ORM\Entity(repositoryClass="FindYourCarBundle\Repository\RoleRepository")
+ * @ORM\Entity(repositoryClass="BuyAndSellBundle\Repository\RoleRepository")
  */
 class Role
 {
@@ -32,7 +32,7 @@ class Role
     /**
      * @var ArrayCollection
      *
-     * @ORM\ManyToMany(targetEntity="FindYourCarBundle\Entity\User")
+     * @ORM\ManyToMany(targetEntity="BuyAndSellBundle\Entity\User")
      */
 private $users;
 

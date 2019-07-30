@@ -1,6 +1,6 @@
 <?php
 
-namespace FindYourCarBundle\Entity;
+namespace BuyAndSellBundle\Entity;
 
 use Doctrine\ORM\Mapping as ORM;
 use DateTime;
@@ -9,7 +9,7 @@ use DateTime;
  * Ad
  *
  * @ORM\Table(name="ads")
- * @ORM\Entity(repositoryClass="FindYourCarBundle\Repository\AdRepository")
+ * @ORM\Entity(repositoryClass="BuyAndSellBundle\Repository\AdRepository")
  */
 class Ad
 {
@@ -58,7 +58,7 @@ private $authorId;
     /**
      * @var User
      *
-     * @ORM\ManyToOne(targetEntity="FindYourCarBundle\Entity\User", inversedBy="ad")
+     * @ORM\ManyToOne(targetEntity="BuyAndSellBundle\Entity\User", inversedBy="ad")
      * @ORM\JoinColumn(name="authorId",referencedColumnName="id")
      */
 
@@ -66,9 +66,9 @@ private $author;
     /**
      * @var string
      *
-     * @ORM\Column(name="imgURL", type="string")
+     * @ORM\Column(name="img", type="string")
      */
-private $imgURL;
+private $img;
     /**
      * @var string
      *
@@ -206,17 +206,17 @@ private $location;
     /**
      * @return string
      */
-    public function getImgURL()
+    public function getImg()
     {
-        return $this->imgURL;
+        return $this->img;
     }
 
     /**
-     * @param string $imgURL
+     * @param string $img
      */
-    public function setImgURL($imgURL)
+    public function setImg($img)
     {
-        $this->imgURL = $imgURL;
+        $this->img = $img;
     }
     /**
      * @return string

@@ -1,8 +1,8 @@
 <?php
 
-namespace FindYourCarBundle\Controller;
+namespace BuyAndSellBundle\Controller;
 
-use FindYourCarBundle\Entity\User;
+use BuyAndSellBundle\Entity\User;
 use Symfony\Component\Routing\Annotation\Route;
 use Symfony\Bundle\FrameworkBundle\Controller\Controller;
 

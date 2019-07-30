@@ -11,13 +11,15 @@
                     </div>
                 </div>
             </div>
+
             <div class="row">
+
                 {% for ad in ads %}
                     <div class="col-md-4 col-sm-12 col-xs-12 wow fadeInRight" data-wow-duration="0.8s"
                          data-wow-delay="0.4s">
                         <div class="single-news">
                             <div class="news-head">
-                                <img src="{{ ad.imgURL }}"
+                                <img src="{{ asset('uploads/ads/' ~ ad.img ) }}"
                                      alt="#">
                             </div>
                             <div class="news-body">
@@ -33,6 +35,5 @@
                 {% endfor %}
             </div>
         </div>
-
     </section>
 {% endblock %}

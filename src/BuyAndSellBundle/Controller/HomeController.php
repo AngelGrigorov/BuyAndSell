@@ -1,8 +1,8 @@
 <?php
 
-namespace FindYourCarBundle\Controller;
+namespace BuyAndSellBundle\Controller;
 
-use FindYourCarBundle\Entity\Ad;
+use BuyAndSellBundle\Entity\Ad;
 use Symfony\Bundle\FrameworkBundle\Controller\Controller;
 use Symfony\Component\HttpFoundation\Response;
 use Symfony\Component\Routing\Annotation\Route;

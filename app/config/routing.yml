@@ -1,3 +1,3 @@
 app:
-    resource: '@FindYourCarBundle/Controller/'
+    resource: '@BuyAndSellBundle/Controller/'
     type: annotation

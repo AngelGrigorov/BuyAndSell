@@ -1,7 +1,7 @@
 {% extends 'base.html.twig' %}
 
 {% block main %}
-    <section id="skill" class="skill section">
+    <section id="skill"  class="skill section">
         <div class="container">
             <div class="row">
                 <div class="col-md-2 col-sm-12 col-xs-12">
@@ -23,7 +23,7 @@
                                 </div>
                             </div>
                             <div class="col-md-8 col-sm-12 col-xs-12">
-                                <img src="{{ ad.imgURL }}"
+                                <img src="{{ asset('uploads/ads/' ~ ad.img) }}"
                                      alt="#" style="max-height: 300px;	max-width: 600px;">
                             </div>
                         </div>

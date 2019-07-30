@@ -8,7 +8,7 @@
 <head>
     <meta charset="UTF-8"/>
     <meta name="viewport" content="width=device-width, initial-scale=1"/>
-    <title>{% block title %}SoftUni Blog{% endblock %}</title>
+    <title>{% block title %}Buy&Sell{% endblock %}</title>
     {% block stylesheets %}
         <link href="https://fonts.googleapis.com/css?family=Fira+Sans:300i,400,400i,500,600,700,800,900" rel="stylesheet">
         <link rel="stylesheet" href="{{ asset('css/bootstrap.min.css') }}">
@@ -37,7 +37,7 @@
                 <div class="row">
                     <div class="col-md-3 col-sm-4 col-xs-12">
                         <div class="logo">
-                            <a href="{{ path('blog_index') }}"><i class="fa fa-car fa-3x" aria-hidden="true"></i><h4>FindYourCar</h4></a>
+                            <a href="{{ path('blog_index') }}"><i class="fa fa-shopping-bag fa-3x"></i><h4>Buy&Sell</h4></a>
 
                         </div>
                     </div>
@@ -48,17 +48,17 @@
                                 <ul id='nav' class="nav navbar-nav">
                                     {% if app.user %}
                                         <li>
-                                            <a href="{{ path('user_profile') }}" class="navbar-brand">
+                                            <a href="{{ path('user_profile') }}">
                                                 My Profile
                                             </a>
                                         </li>
                                         <li>
-                                            <a href="{{ path('ad_create') }}" class="navbar-brand">
+                                            <a href="{{ path('ad_create') }}">
                                                 Post Ad
                                             </a>
                                         </li>
                                         <li>
-                                            <a href="{{ path('security_logout') }}" class="navbar-brand">
+                                            <a href="{{ path('security_logout') }}" >
                                                 Logout
                                             </a>
                                         </li>

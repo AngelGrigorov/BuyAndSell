@@ -1,6 +1,6 @@
 <?php
 
-namespace FindYourCarBundle\Form;
+namespace BuyAndSellBundle\Form;
 
 use Symfony\Component\Form\AbstractType;
 use Symfony\Component\Form\Extension\Core\Type\PasswordType;
@@ -26,7 +26,7 @@ $builder
     public function configureOptions(OptionsResolver $resolver)
     {
         $resolver->setDefaults(array(
-            'data_class' => 'FindYourCarBundle\Entity\User'
+            'data_class' => 'BuyAndSellBundle\Entity\User'
         ));
     }
 }

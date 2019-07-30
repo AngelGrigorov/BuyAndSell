@@ -1,6 +1,6 @@
 <?php
 
-namespace FindYourCarBundle\Repository;
+namespace BuyAndSellBundle\Repository;
 
 /**
  * AdRepository
