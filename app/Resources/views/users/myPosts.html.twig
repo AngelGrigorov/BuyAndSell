@@ -1,13 +1,12 @@
 {% extends 'base.html.twig' %}
 
-
 {% block main %}
     <section id="blog" class="blog section">
         <div class="container">
             <div class="row">
                 <div class="col-md-12 col-sm-4 col-xs-12">
                     <div class="section-title">
-                        <h2>Top <span>Offers</span></h2>
+                        <h2>My <span>Offers</span></h2>
                     </div>
                 </div>
             </div>
@@ -25,9 +24,6 @@
                             <div class="news-body">
                                 <h3><a href="#">{{ ad.title }}</a></h3>
                                 <h2>Price : {{ ad.price }}€</h2>
-                                <p class="author">
-                                    Dealer: {{ ad.author.fullName }}
-                                </p>
                                 <a href="{{ path('ad_view',{'id': ad.id}) }}" class="btn">Read More<i class="fa fa-angle-double-right"></i></a>
                             </div>
                         </div>
@@ -37,3 +33,4 @@
         </div>
     </section>
 {% endblock %}
+

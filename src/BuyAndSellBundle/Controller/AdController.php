@@ -85,12 +85,16 @@ class AdController extends Controller
             return $this->redirectToRoute('blog_index');
         }
         $form = $this->createForm(AdType::class, $ad);
+
+
         $form->handleRequest($request);
+
         if ($form->isSubmitted()) {
+
             /** @var UploadedFile $file */
             $file = $form['img']->getData();
             if ($file->guessExtension() == null) {
-
+                $form->remove('img');
             } else {
                 $fileName = md5(uniqid()) . '.' . $file->guessExtension();
                 if ($file) {
@@ -102,6 +106,7 @@ class AdController extends Controller
 
                 }
             }
+
             $em = $this->getDoctrine()->getManager();
             $em->persist($ad);
             $em->flush();

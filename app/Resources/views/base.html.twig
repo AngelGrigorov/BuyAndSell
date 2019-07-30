@@ -48,6 +48,11 @@
                                 <ul id='nav' class="nav navbar-nav">
                                     {% if app.user %}
                                         <li>
+                                            <a href="{{ path('my_ads') }}">
+                                                My Posts
+                                            </a>
+                                        </li>
+                                        <li>
                                             <a href="{{ path('user_profile') }}">
                                                 My Profile
                                             </a>
