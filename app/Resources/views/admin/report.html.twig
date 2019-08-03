@@ -1,0 +1,37 @@
+{% extends 'base.html.twig' %}
+
+{% block main %}
+    <section id="skill"  class="skill section">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-2 col-sm-12 col-xs-12">
+                    <div class="section-title">
+                        <h2>More <span>Info</span></h2>
+                    </div>
+                </div>
+                <div class="col-md-10 col-sm-12 col-xs-12">
+                    <div class="skill-head">
+                        <div class="row">
+                            <div class="col-md-4 col-sm-12 col-xs-12">
+                                <div class="skill-content">
+
+                                    <h3>{{ report.title }}</h3>
+                                    <p><b>Content: </b> {{ report.content }}</p>
+
+                                    <p><b>User: </b>{{ report.author.fullName }}</p>
+                                    <p><b>Date Added: </b>{{ report.date|date('Y-m-d') }}</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <footer>
+                            <a class="btn btn-danger btn-xs" href="{{ path('report_delete', {'id': report.id}) }}">Delete</a>
+                        <a class="btn btn-default btn-xs" href="{{ path('all_reports') }}">back &raquo;</a>
+                    </footer>
+                </div>
+            </div>
+        </div>
+    </section>
+{% endblock %}
+

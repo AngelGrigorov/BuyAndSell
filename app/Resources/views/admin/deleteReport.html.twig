@@ -1,0 +1,25 @@
+{% extends 'base.html.twig' %}
+
+{% block main %}
+    <div class="container body-content span=8 offset=2">
+        <div class="well">
+            <form class="form-horizontal" action="{{ path('report_delete', {id: report.id}) }}" method="POST">
+                <fieldset>
+                    <legend>Delete This Report ?</legend>
+
+
+                    {{ form_row(form._token) }}
+
+                    <div class="form-group">
+                        <div class="col-sm-4 col-sm-offset-4">
+                            <a class="btn btn-default" href="{{ path('report_view', {id: report.id}) }}">Cancel</a>
+                            <button type="submit" class="btn btn-danger">Delete</button>
+                        </div>
+                    </div>
+                </fieldset>
+            </form>
+        </div>
+    </div>
+
+{% endblock %}
+
