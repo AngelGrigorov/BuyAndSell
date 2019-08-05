@@ -3,6 +3,8 @@
 namespace BuyAndSellBundle\Controller;
 
 use BuyAndSellBundle\Entity\User;
+use Sensio\Bundle\FrameworkExtraBundle\Configuration\Security;
+use Symfony\Component\Config\Definition\Exception\Exception;
 use Symfony\Component\Routing\Annotation\Route;
 use Symfony\Bundle\FrameworkBundle\Controller\Controller;
 
@@ -28,6 +30,7 @@ class SecurityController extends Controller
     }
     /**
      * @Route("/profile", name="user_profile")
+     * @Security("is_granted('IS_AUTHENTICATED_FULLY')")
      */
     public function profile()
     {

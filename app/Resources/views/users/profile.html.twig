@@ -2,6 +2,33 @@
 
 
 {% block main %}
-<h1>Hello {{ user.getFullName() }}</h1>
+    <section id="skill"  class="skill section">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-2 col-sm-12 col-xs-12">
+                    <div class="section-title">
+                        <h2>My <span>Profile</span></h2>
+                    </div>
+                </div>
+                <div class="col-md-10 col-sm-12 col-xs-12">
+                    <div class="skill-head">
+                        <div class="row">
+                            <div class="col-md-4 col-sm-12 col-xs-12">
+                                <div class="skill-content">
+                                    <p><b>User: </b>{{ user.getFullName() }}</p>
+                                    <p><b>Email: </b>{{ user.getEmail() }}</p>
+                                    <p><b>Phone Number: </b>{{ user.getNumber() }}</p>
 
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <footer>
+                        <a class="btn btn-default btn-xs" href="{{ path('index') }}">back &raquo;</a>
+                    </footer>
+                </div>
+            </div>
+        </div>
+    </section>
 {% endblock %}

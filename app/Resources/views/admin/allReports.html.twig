@@ -1,8 +1,32 @@
 {% extends 'base.html.twig' %}
 
 {% block main %}
-    {% for report in reports|reverse %}
 
-    <li><a href="{{ path('report_view', {'id': report.id}) }}"> {{ report.title }} </a></li>
-    {% endfor %}
+    <section id="service" class="service section">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-4 col-sm-12 col-xs-12">
+                    <div class="section-title">
+                        <h2>All <span>Reports</span></h2>
+                    </div>
+                </div>
+                <div class="col-md-8 col-sm-12 col-xs-12">
+                    {% for report in reports|reverse %}
+                    <div class="wow fadeInUp" data-wow-duration="0.8s"
+                         data-wow-delay="0.4s">
+                        <!-- single-service -->
+                        <div class="single-service">
+                            <i class="fa fa-laptop"></i>
+                            <h5><a href="{{ path('report_view', {'id': report.id}) }}"> {{ report.title }} </a></h5>
+                        </div>
+                    </div>
+                    {% endfor %}
+                </div>
+
+            </div>
+        </div>
+    </section>
+
 {% endblock %}
+
+

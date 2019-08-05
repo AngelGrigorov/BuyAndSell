@@ -49,7 +49,7 @@
                                 <ul id='nav' class="nav navbar-nav">
                                     {% if app.user and app.getUser().isAdmin() %}
                                     <li>
-                                        <a href="{{ path('all_reports') }}">Admin Issues</a>
+                                        <a href="{{ path('all_reports') }}">Reports</a>
                                     </li>
                                     {% endif%}
                                      {% if app.user %}
@@ -94,6 +94,7 @@
         </div>
         <!--/ End Header Inner -->
     </header>
+
 {% endblock %}
 <br/>
 <div class="container body-container">

@@ -8,6 +8,7 @@ use Doctrine\ORM\Mapping as ORM;
 use Doctrine\ORM\Mapping\JoinColumn;
 use Doctrine\ORM\Mapping\JoinTable;
 use Symfony\Component\Security\Core\User\UserInterface;
+use Symfony\Component\Validator\Constraints as Assert;
 
 
 
@@ -29,6 +30,10 @@ class User implements UserInterface
     private $id;
 
     /**
+     * @Assert\Email(
+     *     message = "The email '{{ value }}' is not a valid email.",
+     *     checkMX = false
+     * )
      * @var string
      *
      * @ORM\Column(name="email", type="string", length=255, unique=true)
@@ -46,7 +51,7 @@ class User implements UserInterface
      *
      * @ORM\OneToMany(targetEntity="BuyAndSellBundle\Entity\Ad", mappedBy="author")
      */
-    private $ad;
+    private $ads;
 
     /**
      * @return ArrayCollection
@@ -56,9 +61,9 @@ class User implements UserInterface
     /**
      * @return \Doctrine\Common\Collections\Collection
      */
-    public function getAd()
+    public function getAds()
     {
-        return $this->ad;
+        return $this->ads;
     }
 
     /**
@@ -254,7 +259,7 @@ class User implements UserInterface
      */
     public function addPost(Ad $ad)
     {
-        $this->ad[] = $ad;
+        $this->ads[] = $ad;
         return $this;
     }
 

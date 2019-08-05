@@ -37,31 +37,41 @@ class ReportController extends Controller
             $em->flush();
             return $this->redirectToRoute('index');
         }
-
         return $this->render('security/report.html.twig',
             array('form' => $form->createView()));
     }
     /**
      * @Route("/all_reports", name="all_reports")
      *
+     * @Security("is_granted('IS_AUTHENTICATED_FULLY')")
      * @return Response
      */
     public function showAllReports()
     {
         $reports = $this->getDoctrine()->getRepository(Report::class)->findAll();
-
+        $currentUser = $this->getUser();
+        /** @var User $currentUser */
+        if(!$currentUser->isAdmin()) {
+            return $this->redirectToRoute('index');
+        }
         return $this->render('admin/allReports.html.twig', [
             'reports' => $reports
         ]);
     }
     /**
      * @Route("/report/{id}", name="report_view")
+     * @Security("is_granted('IS_AUTHENTICATED_FULLY')")
      * @param $id
      * @return Response
      */
     public function viewReport($id)
     {
         $report = $this->getDoctrine()->getRepository(Report::class)->find($id);
+        $currentUser = $this->getUser();
+        /** @var User $currentUser */
+        if(!$currentUser->isAdmin()) {
+            return $this->redirectToRoute('index');
+        }
         return $this->render('admin/report.html.twig',
             ['report' => $report]);
     }
@@ -88,13 +98,16 @@ class ReportController extends Controller
         $form = $this->createForm(ReportType::class, $report);
         $form->handleRequest($request);
         if ($form->isSubmitted()) {
+
             $em = $this->getDoctrine()->getManager();
             $em->remove($report);
             $em->flush();
+
             return $this->redirectToRoute('all_reports');
         }
         return $this->render('admin/deleteReport.html.twig',
             array('report' => $report,
+
                 'form' => $form->createView()));
     }
 }

@@ -3,7 +3,7 @@
 namespace BuyAndSellBundle\Controller;
 
 use BuyAndSellBundle\Entity\Ad;
-use BuyAndSellBundle\Entity\User;
+use Sensio\Bundle\FrameworkExtraBundle\Configuration\Security;
 use Symfony\Bundle\FrameworkBundle\Controller\Controller;
 use Symfony\Component\HttpFoundation\Response;
 use Symfony\Component\Routing\Annotation\Route;
@@ -26,6 +26,7 @@ class HomeController extends Controller
 
     /**
      * @Route("/myposts", name="my_ads")
+     * @Security("is_granted('IS_AUTHENTICATED_FULLY')")
      */
     public function myPosts()
     {
@@ -34,5 +35,6 @@ class HomeController extends Controller
         'ads' => $ads
     ]);
     }
+
 
 }

@@ -19,11 +19,12 @@
                          data-wow-delay="0.4s">
                         <div class="single-news">
                             <div class="news-head">
-                                <img src="{{ asset('uploads/ads/' ~ ad.img ) }}"
+                                <a href="{{ path('ad_view',{'id': ad.id}) }}"><img src="{{ asset('uploads/ads/' ~ ad.img ) }}"
                                      alt="#">
+                                </a>
                             </div>
                             <div class="news-body">
-                                <h3><a href="#">{{ ad.title }}</a></h3>
+                                <h3><a href="{{ path('ad_view',{'id': ad.id}) }}">{{ ad.title }}</a></h3>
                                 <h2>Price : {{ ad.price }}€</h2>
                                 <p class="author">
                                     User: {{ ad.author.fullName }}
