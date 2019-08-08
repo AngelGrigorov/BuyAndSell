@@ -17,7 +17,7 @@ class AdController extends Controller
     /**
      * @param Request $request
      *
-     * @Route("/ad/create", name="ad_create")
+     * @Route("/ad/create", name="ad_create", methods={"GET"})
      * @Security("is_granted('IS_AUTHENTICATED_FULLY')")
      *
      * @return Response
@@ -25,11 +25,29 @@ class AdController extends Controller
      */
     public function create(Request $request)
     {
+        $errors = '';
+        return $this->render('ad/create.html.twig',
+            array('errors' => $errors,
+                'form' => $this->createForm(AdType::class)->createView()));
+    }
+
+    /**
+     * @param Request $request
+     *
+     * @Route("/ad/create", methods={"POST"})
+     * @Security("is_granted('IS_AUTHENTICATED_FULLY')")
+     *
+     * @return Response
+     * @throws \Exception
+     */
+    public function createProcess(Request $request)
+    {
         $ad = new Ad();
         $form = $this->createForm(AdType::class, $ad);
         $form->handleRequest($request);
 
-
+        $validator = $this->get('validator');
+        $errors = $validator->validate($ad);
         if ($form->isSubmitted() && $form->isValid()) {
             /** @var UploadedFile $file */
             $file = $form['img']->getData();
@@ -45,11 +63,19 @@ class AdController extends Controller
             $em = $this->getDoctrine()->getManager();
             $em->persist($ad);
             $em->flush();
+            if (count($errors) > 0) {
+                if (count($errors) > 0) {
+                    return $this->redirectToRoute('index', [
+                        'errors' => $errors
+                    ]);
+                }
+            }
             return $this->redirectToRoute('index');
         }
 
         return $this->render('ad/create.html.twig',
-            array('form' => $form->createView()));
+            array('errors' => $errors,
+                'form' => $form->createView()));
     }
 
     /**
@@ -86,16 +112,14 @@ class AdController extends Controller
         }
         $form = $this->createForm(AdType::class, $ad);
 
-
+        $img = $ad->getImg();
         $form->handleRequest($request);
 
         if ($form->isSubmitted()) {
 
             /** @var UploadedFile $file */
             $file = $form['img']->getData();
-            if ($file->guessExtension() == null) {
-                $form->remove('img');
-            } else {
+            if ($file !== null){
                 $fileName = md5(uniqid()) . '.' . $file->guessExtension();
                 if ($file) {
                     $file->move(
@@ -105,6 +129,9 @@ class AdController extends Controller
                     $ad->setImg($fileName);
 
                 }
+
+            } else {
+                $ad->setImg($img);
             }
 
             $em = $this->getDoctrine()->getManager();

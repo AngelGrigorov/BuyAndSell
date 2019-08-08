@@ -30,6 +30,7 @@ class User implements UserInterface
     private $id;
 
     /**
+     * @Assert\NotBlank(message=" The email field should not be blank")
      * @Assert\Email(
      *     message = "The email '{{ value }}' is not a valid email.",
      *     checkMX = false
@@ -41,6 +42,12 @@ class User implements UserInterface
     private $email;
 
     /**
+     * @Assert\NotBlank(message=" The password field should not be blank")
+     * @Assert\Length(
+     *      min = 6,
+     *      max = 50,
+     *      minMessage = "Your pasword must be at least {{ limit }} characters long",
+     *      maxMessage = "Your password cannot be longer than {{ limit }} characters")
      * @var string
      *
      * @ORM\Column(name="password", type="string", length=255)
@@ -67,6 +74,7 @@ class User implements UserInterface
     }
 
     /**
+     * @Assert\NotBlank(message=" The username field should not be blank")
      * @var string
      *
      * @ORM\Column(name="fullName", type="string", length=255)
@@ -84,6 +92,14 @@ class User implements UserInterface
     private $roles;
 
     /**
+     * @Assert\NotBlank(message=" The number field should not be blank")
+     * @Assert\Length(
+     *      min = 10,
+     *      max = 12,
+     *      minMessage = "Your number must be at least {{ limit }} digits long",
+     *      maxMessage = "Your number cannot be longer than {{ limit }} digits")
+     * @Assert\GreaterThan(0,
+     *     message="The phone number should be positive.")
      * @var string
      *
      * @ORM\Column(name="number", type="string", length=12)

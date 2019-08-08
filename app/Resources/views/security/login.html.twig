@@ -10,6 +10,11 @@
                     <div class="form-head">
                         <form class="form" name="authenticate" action="{{ path('security_login') }}" method="post">
                             <legend>Login Form</legend>
+                            <ul id='error'>
+                            {% if error %}
+                                <div class="alert alert-danger">{{ error.messageKey|trans(error.messageData, 'security') }}</div>
+                            {% endif %}
+                            </ul>
                             <div class="form-group">
                                 <input type="email" class="form-control" id="user_email" placeholder="Email" name="_username">
                             </div>

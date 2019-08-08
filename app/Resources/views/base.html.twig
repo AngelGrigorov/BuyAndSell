@@ -25,6 +25,11 @@
         <link rel="stylesheet" href="{{ asset('css/normalize.css') }}">
         <link rel="stylesheet" href="{{ asset('css/style.css') }}">
         <link rel="stylesheet" href="{{ asset('css/responsive.css') }}">
+        <script>
+            setTimeout(function () {
+                $('#error').fadeOut();
+            }, 3500)
+        </script>
     {% endblock %}
     <link rel="icon" type="image/x-icon" href="{{ asset('favicon.ico') }}"/>
 </head>
@@ -96,10 +101,10 @@
     </header>
 
 {% endblock %}
+
 <br/>
 <div class="container body-container">
     {% block body %}
-
         <div id="main" class="col-sm-12">
             {% block main %}{% endblock %}
         </div>

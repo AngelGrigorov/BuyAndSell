@@ -4,6 +4,7 @@ namespace BuyAndSellBundle\Entity;
 
 use Doctrine\ORM\Mapping as ORM;
 use DateTime;
+use Symfony\Component\Validator\Constraints as Assert;
 
 /**
  * Ad
@@ -24,12 +25,19 @@ class Ad
 
     /**
      * @var string
-     *
+     *@Assert\NotBlank(message=" The title field should not be blank")
+     * @Assert\Length(
+     *      min = 1,
+     *      max = 27,
+     *      minMessage = "Your title must be at least {{ limit }} characters long",
+     *      maxMessage = "Your title cannot be longer than {{ limit }} characters")
      * @ORM\Column(name="title", type="string", length=255)
      */
     private $title;
 
     /**
+     * @Assert\GreaterThan(0,
+     *     message="The price should be positive.")
      * @var float
      *
      * @ORM\Column(name="price", type="float")
@@ -37,7 +45,12 @@ class Ad
     private $price;
     /**
      * @var string
-     *
+     *@Assert\NotBlank(message=" The info field should not be blank")
+     * @Assert\Length(
+     *      min = 1,
+     *      max = 255,
+     *      minMessage = "Your info must be at least {{ limit }} characters long",
+     *      maxMessage = "Your info cannot be longer than {{ limit }} characters")
      * @ORM\Column(name="info", type="string", length=255)
      */
 private $info;

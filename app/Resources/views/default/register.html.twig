@@ -6,13 +6,24 @@
     <section id="contact" class="contact section">
         <div class="container">
             <div class="row">
+                <ul id='error'>
+                    {% for error in errors %}
+                        <div class="alert alert-danger">
+                            {{ error.message }}
+                            <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+                                <span aria-hidden="true">&times;</span>
+                            </button>
+                        </div>
+                    {% endfor %}
+                </ul>
                 <div class="col-md-8 col-sm-12 col-xs-12 ">
                     <div class="form-head">
                         <form class="form" action="{{ path('user_register') }}" method="post">
                             <legend>Register Form</legend>
+
                             <div class="form-group">
-                                <input name="user[email]" id="user_email" placeholder="Enter email" required
-                                       type="email">
+                                <input name="user[email]" id="user_email" placeholder="Enter email" type="email"
+                                        required>
                             </div>
 
                             <div class="form-group">
@@ -20,7 +31,7 @@
                                        name="user[fullName]" required>
                     </div>
                             <div class="form-group">
-                                <input type="number" class="form-control" placeholder="Phone number"
+                                <input type="number" pattern="^[0-9]" min="0" class="form-control" placeholder="Phone number"
                                        name="user[number]" required>
                             </div>
                             <div class="form-group">
