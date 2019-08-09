@@ -1,0 +1,61 @@
+{% extends 'base.html.twig' %}
+
+{% block main %}
+    <section id="blog" class="blog section">
+        <div class="container">
+            <div class="row">
+                {% if keyword is empty %}
+                    <div class="alert alert-danger">Please enter a keyword.</div>
+                    <div class="row">
+                        <div class="col-md-12 col-sm-4 col-xs-12">
+                            <div class="section-title">
+
+                                <form method="post" action="{{ path('search') }}"class="form-inline md-form mr-auto mb-4">
+                                    <input name="keyword" class="form-control mr-sm-2" type="text" placeholder="Search here.." aria-label="Search">
+                                    <button class="btn btn-outline-warning btn-rounded btn-sm my-0" type="submit">Search</button>
+                                </form>
+                            </div>
+                        </div>
+                    </div>
+                {% else %}
+                    <div class="row">
+                        <div class="col-md-12 col-sm-4 col-xs-12">
+                            <div class="section-title">
+
+
+                                <form method="post" action="{{ path('search') }}"class="form-inline md-form mr-auto mb-4">
+                                    <input name="keyword" class="form-control mr-sm-2" type="text" placeholder="Search here.." aria-label="Search">
+                                    <button class="btn btn-outline-warning btn-rounded btn-sm my-0" type="submit">Search</button>
+                                </form>
+
+                            </div>
+                        </div>
+                    </div>
+                    {% for ad in ads|reverse %}
+                        <div class="col-md-4 col-sm-12 col-xs-12 wow fadeInRight" data-wow-duration="0.8s"
+                             data-wow-delay="0.4s">
+                            <div class="single-news">
+                                <div class="news-head">
+                                    <a href="{{ path('ad_view',{'id': ad.id}) }}"><img
+                                                src="{{ asset('uploads/ads/' ~ ad.img ) }}"
+                                                alt="#">
+                                    </a>
+                                </div>
+                                <div class="news-body">
+                                    <h3><a href="{{ path('ad_view',{'id': ad.id}) }}">{{ ad.title }}</a></h3>
+                                    <h2>Price : {{ ad.price }}€</h2>
+                                    <p class="author">
+                                        User: {{ ad.author.fullName }}
+                                    </p>
+                                    <a href="{{ path('ad_view',{'id': ad.id}) }}" class="btn">Read More<i
+                                                class="fa fa-angle-double-right"></i></a>
+                                </div>
+                            </div>
+                        </div>
+                    {% endfor %}
+                {% endif %}
+            </div>
+        </div>
+    </section>
+{% endblock %}
+
