@@ -37,7 +37,7 @@ class ReportController extends Controller
             $em->flush();
             return $this->redirectToRoute('index');
         }
-        return $this->render('security/report.html.twig',
+        return $this->render('admin/makeReport.html.twig',
             array('form' => $form->createView()));
     }
     /**

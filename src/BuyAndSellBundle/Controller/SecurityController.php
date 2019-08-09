@@ -20,7 +20,7 @@ class SecurityController extends Controller
     public function login(AuthenticationUtils $authenticationUtils)
     {
         $error = $authenticationUtils->getLastAuthenticationError();
-        return $this->render('security/login.html.twig',[
+        return $this->render('users/login.html.twig',[
             'error' => $error
         ]);
     }

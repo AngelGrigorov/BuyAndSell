@@ -36,6 +36,7 @@ class Ad
     private $title;
 
     /**
+     * @Assert\NotBlank(message=" The price field should not be blank")
      * @Assert\GreaterThan(0,
      *     message="The price should be positive.")
      * @var float
@@ -78,13 +79,13 @@ private $authorId;
 private $author;
     /**
      * @var string
-     *
+     *@Assert\NotBlank(message="Please select image")
      * @ORM\Column(name="img", type="string")
      */
 private $img;
     /**
      * @var string
-     *
+     *@Assert\NotBlank(message=" The location field should not be blank")
      * @ORM\Column(name="location",type="string")
      */
 private $location;

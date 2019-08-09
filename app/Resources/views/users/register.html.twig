@@ -7,6 +7,14 @@
         <div class="container">
             <div class="row">
                 <ul id='error'>
+                    {% if mail %}
+                    <div class="alert alert-danger">
+                        {{ mail }}
+                        <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+                            <span aria-hidden="true">&times;</span>
+                        </button>
+                    </div>
+                    {% endif %}
                     {% for error in errors %}
                         <div class="alert alert-danger">
                             {{ error.message }}
@@ -23,24 +31,20 @@
 
                             <div class="form-group">
                                 <input name="user[email]" id="user_email" placeholder="Enter email" type="email"
-                                        required>
+                                        >
                             </div>
 
                             <div class="form-group">
                                 <input type="text" class="form-control" id="user_fullName" placeholder="Userame"
-                                       name="user[fullName]" required>
+                                       name="user[fullName]" >
                     </div>
                             <div class="form-group">
                                 <input type="number" pattern="^[0-9]" min="0" class="form-control" placeholder="Phone number"
-                                       name="user[number]" required>
+                                       name="user[number]" >
                             </div>
                             <div class="form-group">
                                 <input type="password" class="form-control" id="user_password_first"
-                                       placeholder="Password" name="user[password][first]" required>
-                            </div>
-                            <div class="form-group">
-                                <input type="password" class="form-control" id="user_password_second"
-                                       placeholder="Confirm Password" name="user[password][second]" required>
+                                       placeholder="Password" name="user[password]" >
                             </div>
                             <div class="form-group">
                                 <div class="button">

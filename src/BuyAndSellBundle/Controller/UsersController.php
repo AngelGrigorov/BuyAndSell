@@ -20,10 +20,9 @@ class UsersController extends Controller
      */
     public function register(Request $request)
     {
-
-        $errors = '';
-        return $this->render('default/register.html.twig',
-            ['errors' => $errors,
+        return $this->render('users/register.html.twig',
+            ['errors' => $errors = '',
+                'mail' => $mail = '',
                 'form' => $this->createForm(UserType::class)->createView()]);
     }
     /**
@@ -38,6 +37,17 @@ class UsersController extends Controller
         $form->handleRequest($request);
         $validator = $this->get('validator');
         $errors = $validator->validate($user);
+        $email = $user->getEmail();
+        $mail = '';
+        $userRepo = $this->getDoctrine()->getRepository(User::class);
+        if($form->isSubmitted() && $userRepo->findOneBy(['email' => $email])){
+            $mail = 'Email already used.';
+            return $this->render('users/register.html.twig', [
+                'mail' => $mail,
+                'errors' => $errors,
+                'form' => $this->createForm(UserType::class)->createView(),
+            ]);
+        }
         if ($form->isSubmitted() && $form->isValid()) {
             $password = $this->get('security.password_encoder')
                 ->encodePassword($user, $user->getPassword());
@@ -52,16 +62,18 @@ class UsersController extends Controller
             $em->flush();
 
                 if (count($errors) > 0) {
-                    return $this->render('default/register.html.twig', [
-                        'errors' => $errors
+                    return $this->render('users/register.html.twig', [
+                        'errors' => $errors,
+                        'mail' => $mail
                     ]);
                 }
 
             return $this->redirectToRoute("security_login");
         }
 
-        return $this->render('default/register.html.twig',
+        return $this->render('users/register.html.twig',
             ['errors' => $errors,
+                'mail' => $mail,
                 'form' => $this->createForm(UserType::class)->createView(),
                 ]);
     }
