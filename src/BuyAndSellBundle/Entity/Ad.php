@@ -25,20 +25,20 @@ class Ad
 
     /**
      * @var string
-     *@Assert\NotBlank(message=" The title field should not be blank")
+     *@Assert\NotBlank(message="Заглавието не може да е празно поле")
      * @Assert\Length(
      *      min = 1,
      *      max = 27,
-     *      minMessage = "Your title must be at least {{ limit }} characters long",
-     *      maxMessage = "Your title cannot be longer than {{ limit }} characters")
+     *      minMessage = "Заглавието трябва да бъде поне {{ limit }} символа",
+     *      maxMessage = "Заглавието не може да бъде повече от {{ limit }} символа")
      * @ORM\Column(name="title", type="string", length=255)
      */
     private $title;
 
     /**
-     * @Assert\NotBlank(message=" The price field should not be blank")
+     * @Assert\NotBlank(message=" Трябва да има цена")
      * @Assert\GreaterThan(0,
-     *     message="The price should be positive.")
+     *     message="Цената трябва да бъде реална")
      * @var float
      *
      * @ORM\Column(name="price", type="float")
@@ -46,7 +46,7 @@ class Ad
     private $price;
     /**
      * @var string
-     *@Assert\NotBlank(message=" The info field should not be blank")
+     *@Assert\NotBlank(message=" Полето за информация не трябва да е празно")
      * @Assert\Length(
      *      min = 1,
      *      max = 255,
@@ -79,13 +79,13 @@ private $authorId;
 private $author;
     /**
      * @var string
-     *@Assert\NotBlank(message="Please select image")
+     *@Assert\NotBlank(message="Изберете изображение")
      * @ORM\Column(name="img", type="string")
      */
 private $img;
     /**
      * @var string
-     *@Assert\NotBlank(message=" The location field should not be blank")
+     *@Assert\NotBlank(message=" Полето за местонахождение не трябва да бъде празно")
      * @ORM\Column(name="location",type="string")
      */
 private $location;

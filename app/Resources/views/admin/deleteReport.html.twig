@@ -5,15 +5,15 @@
         <div class="well">
             <form class="form-horizontal" action="{{ path('report_delete', {id: report.id}) }}" method="POST">
                 <fieldset>
-                    <legend>Delete This Report ?</legend>
+                    <legend>Изтрий този доклад ?</legend>
 
 
                     {{ form_row(form._token) }}
 
                     <div class="form-group">
                         <div class="col-sm-4 col-sm-offset-4">
-                            <a class="btn btn-default" href="{{ path('report_view', {id: report.id}) }}">Cancel</a>
-                            <button type="submit" class="btn btn-danger">Delete</button>
+                            <a class="btn btn-default" href="{{ path('report_view', {id: report.id}) }}">Отказ</a>
+                            <button type="submit" class="btn btn-danger">Изтрий</button>
                         </div>
                     </div>
                 </fieldset>

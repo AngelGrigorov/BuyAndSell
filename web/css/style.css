@@ -1033,6 +1033,7 @@ a:hover{
 .blog .single-news .news-head{
 	overflow:hidden;
 	max-height: 200px;
+	min-height: 200px;
 }
 .blog .single-news .news-date {
 	background: #42bc7f;

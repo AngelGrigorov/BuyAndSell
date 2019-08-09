@@ -9,24 +9,24 @@
                 <div class="col-md-8 col-sm-12 col-xs-12 ">
                     <div class="form-head">
                         <form class="form" name="authenticate" action="{{ path('security_login') }}" method="post">
-                            <legend>Login Form</legend>
+                            <legend>Вход</legend>
                             <ul id='error'>
                             {% if error %}
                                 <div class="alert alert-danger">{{ error.messageKey|trans(error.messageData, 'security') }}</div>
                             {% endif %}
                             </ul>
                             <div class="form-group">
-                                <input type="email" class="form-control" id="user_email" placeholder="Email" name="_username">
+                                <input type="email" class="form-control" id="user_email" placeholder="Имейл" name="_username">
                             </div>
 
                             <div class="form-group">
-                                <input type="password" class="form-control" id="password" placeholder="Password" name="_password">
+                                <input type="password" class="form-control" id="password" placeholder="Парола" name="_password">
                             </div>
                             <input type="hidden" name="_csrf_token" value="{{ csrf_token('authenticate') }}"/>
 
                             <div class="form-group">
                                 <div class="button">
-                                    <button type="submit" class="btn primary">Login</button>
+                                    <button type="submit" class="btn primary">Вход</button>
                                 </div>
                             </div>
                         </form>

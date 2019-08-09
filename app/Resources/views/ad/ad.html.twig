@@ -6,7 +6,7 @@
             <div class="row">
                 <div class="col-md-2 col-sm-12 col-xs-12">
                     <div class="section-title">
-                        <h2>More <span>Info</span></h2>
+                        <h2>Повече <span>Инфо</span></h2>
                     </div>
                 </div>
                 <div class="col-md-10 col-sm-12 col-xs-12">
@@ -16,11 +16,11 @@
                                 <div class="skill-content">
 
                                     <h3>{{ ad.title }}</h3>
-                                    <p><b>Location: </b> {{ ad.location }}</p>
-                                    <p><b>Information: </b> {{ ad.info }}</p>
-                                    <p><b>Price: </b>{{ ad.price }}€</p>
-                                    <p><b>User: </b>{{ ad.author.fullName }}</p>
-                                    <p><b>Contact: </b>{{ ad.author.number }}</p>
+                                    <p><b>Местонахождение: </b> {{ ad.location }}</p>
+                                    <p><b>Информация: </b> {{ ad.info }}</p>
+                                    <p><b>Цена: </b>{{ ad.price }}лв.</p>
+                                    <p><b>Потребител: </b>{{ ad.author.fullName }}</p>
+                                    <p><b>Контакт: </b>{{ ad.author.number }}</p>
                                 </div>
                             </div>
                             <div class="col-md-8 col-sm-12 col-xs-12">
@@ -33,10 +33,10 @@
                     <footer>
 
                         {% if app.getUser() and (app.getUser().isAuthor(ad) or app.getUser().isAdmin()) %}
-                            <a class="btn btn-success btn-xs" href="{{ path('ad_edit', {'id': ad.id}) }}">Edit</a>
-                            <a class="btn btn-danger btn-xs" href="{{ path('ad_delete', {'id': ad.id}) }}">Delete</a>
+                            <a class="btn btn-success btn-xs" href="{{ path('ad_edit', {'id': ad.id}) }}">Редактирай</a>
+                            <a class="btn btn-danger btn-xs" href="{{ path('ad_delete', {'id': ad.id}) }}">Изтрий</a>
                         {% endif %}
-                        <a class="btn btn-default btn-xs" href="{{ path('index') }}">back &raquo;</a>
+                        <a class="btn btn-default btn-xs" href="{{ path('index') }}">назад &raquo;</a>
 
                     </footer>
                 </div>

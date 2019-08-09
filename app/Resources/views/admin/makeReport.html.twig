@@ -5,8 +5,8 @@
             <div class="row">
                 <div class="col-md-4 col-sm-12 col-xs-12">
                     <div class="contact-info">
-                        <h4>What is the problem ??</h4>
-                        <p>Explain briefly what happened and what steps we can take to reproduce the problem ..</p>
+                        <h4>Какъв проблем имате ?</h4>
+                        <p>Обяснете обстойно какъв е проблемът и как да го възпроизведем.</p>
                         <span><i class="fa fa-phone-square"></i>+262 695 2601</span>
                         <span><i class="fa fa-map-marker"></i>121 King Street, Australia</span>
                         <span><i class="fa fa-envelope"></i>youmail@gmail.com</span>
@@ -17,17 +17,17 @@
                     <div class="form-head">
                         <form class="form"  action="{{ path('report_create') }}" method="POST">
                             <div class="form-group">
-                                <input name="report[title]" type="text" placeholder="enter title">
+                                <input name="report[title]" type="text" placeholder="Въведи заглавие">
                             </div>
                             <div class="form-group">
-                                <textarea name="report[content]" placeholder="enter message"></textarea>
+                                <textarea name="report[content]" placeholder="Въведи информация"></textarea>
                             </div>
                             {{ form_row(form._token) }}
 
                             <div class="form-group">
                                 <div class="button">
-                                    <a class="btn btn-default" href="{{ path('index') }}">Back</a>
-                                    <button type="submit" class="btn primary">Report</button>
+                                    <a class="btn btn-default" href="{{ path('index') }}">Назад</a>
+                                    <button type="submit" class="btn primary">Докладвай</button>
                                 </div>
                             </div>
                         </form>

@@ -30,9 +30,9 @@ class User implements UserInterface
     private $id;
 
     /**
-     * @Assert\NotBlank(message=" The email field should not be blank")
+     * @Assert\NotBlank(message=" Въведете имейл.")
      * @Assert\Email(
-     *     message = "The email '{{ value }}' is not a valid email.",
+     *     message = "'{{ value }}' е невалиден имейл.",
      *     checkMX = false
      * )
      * @var string
@@ -42,12 +42,12 @@ class User implements UserInterface
     private $email;
 
     /**
-     * @Assert\NotBlank(message=" The password field should not be blank")
+     * @Assert\NotBlank(message=" Трябва да въведете парола.")
      * @Assert\Length(
      *      min = 6,
      *      max = 50,
-     *      minMessage = "Your pasword must be at least {{ limit }} characters long",
-     *      maxMessage = "Your password cannot be longer than {{ limit }} characters")
+     *      minMessage = "Паролата трябва да бъде поне {{ limit }} символа",
+     *      maxMessage = "Паролата не трябва да бъде повече от {{ limit }} символа")
      * @var string
      *
      * @ORM\Column(name="password", type="string", length=255)
@@ -74,7 +74,7 @@ class User implements UserInterface
     }
 
     /**
-     * @Assert\NotBlank(message=" The username field should not be blank")
+     * @Assert\NotBlank(message="Полето за име не трябва да е празно.")
      * @var string
      *
      * @ORM\Column(name="fullName", type="string", length=255)
@@ -92,14 +92,14 @@ class User implements UserInterface
     private $roles;
 
     /**
-     * @Assert\NotBlank(message=" The number field should not be blank")
+     * @Assert\NotBlank(message="Въведете номер за контакт с вас")
      * @Assert\Length(
      *      min = 10,
      *      max = 12,
-     *      minMessage = "Your number must be at least {{ limit }} digits long",
-     *      maxMessage = "Your number cannot be longer than {{ limit }} digits")
+     *      minMessage = "Вашият номер трябва да бъде поне {{ limit }} цифри",
+     *      maxMessage = "Вашият номер не трябва да бъде повече от {{ limit }} цифри")
      * @Assert\GreaterThan(0,
-     *     message="The phone number should be positive.")
+     *     message="Моля въведете реален номер.")
      * @var string
      *
      * @ORM\Column(name="number", type="string", length=12)

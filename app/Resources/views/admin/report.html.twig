@@ -6,7 +6,7 @@
             <div class="row">
                 <div class="col-md-2 col-sm-12 col-xs-12">
                     <div class="section-title">
-                        <h2>More <span>Info</span></h2>
+                        <h2>Повече <span>Инфо</span></h2>
                     </div>
                 </div>
                 <div class="col-md-10 col-sm-12 col-xs-12">
@@ -16,18 +16,18 @@
                                 <div class="skill-content">
 
                                     <h3>{{ report.title }}</h3>
-                                    <p><b>Content: </b> {{ report.content }}</p>
+                                    <p><b>Информация: </b> {{ report.content }}</p>
 
-                                    <p><b>User: </b>{{ report.author.fullName }}</p>
-                                    <p><b>Date Added: </b>{{ report.date|date('Y-m-d') }}</p>
+                                    <p><b>Потребител: </b>{{ report.author.fullName }}</p>
+                                    <p><b>Дата: </b>{{ report.date|date('Y-m-d') }}</p>
                                 </div>
                             </div>
                         </div>
                     </div>
 
                     <footer>
-                            <a class="btn btn-danger btn-xs" href="{{ path('report_delete', {'id': report.id}) }}">Delete</a>
-                        <a class="btn btn-default btn-xs" href="{{ path('all_reports') }}">back &raquo;</a>
+                            <a class="btn btn-danger btn-xs" href="{{ path('report_delete', {'id': report.id}) }}">Изтрий</a>
+                        <a class="btn btn-default btn-xs" href="{{ path('all_reports') }}">назад &raquo;</a>
                     </footer>
                 </div>
             </div>

@@ -5,27 +5,25 @@
         <div class="well">
             <form class="form-horizontal" enctype="multipart/form-data" action="{{ path('ad_edit', {id: ad.id}) }}" method="POST">
                 <fieldset>
-                    <legend>Edit Post</legend>
-
-                        <legend>New Ad</legend>
+                    <legend>Редактирай обява</legend>
                         <div class="form-group">
-                            <input type="text" class="form-control" placeholder="Product Name"
+                            <input type="text" class="form-control" placeholder="Име на продукта"
                                    name="ad[title]" value="{{ ad.title }}">
                         </div>
                         <div class="form-group">
-                            <input type="text" class="form-control" placeholder="Location"
+                            <input type="text" class="form-control" placeholder="Местонахождение"
                                    name="ad[location]" value="{{ ad.location }}">
                         </div>
                         <div class="form-group">
-                                <input class="form-control" placeholder="More Information"
+                                <input class="form-control" placeholder="Повече информация"
                                           name="ad[info]" value="{{ ad.info }}">
                         </div>
                         <div class="form-group">
-                            <input type="number" class="form-control" placeholder="Price in Euro"
+                            <input type="number" class="form-control" placeholder="Цена в лева"
                                    name="ad[price]" value="{{ ad.price }}">
                         </div>
                         <div class="form-group">
-                            <input type="file" accept=".jpg, .jpeg, .png" class="form-control" placeholder="Img"
+                            <input type="file" accept=".jpg, .jpeg, .png" class="form-control" placeholder="Изображение"
                                    name="ad[img]" value="{{ ad.img }}" >
                         </div>
 
@@ -34,8 +32,8 @@
 
                     <div class="form-group">
                         <div class="col-sm-4 col-sm-offset-4">
-                            <a class="btn btn-default" href="{{ path('ad_view', {id: ad.id}) }}">Cancel</a>
-                            <button type="submit" class="btn btn-success">Edit</button>
+                            <a class="btn btn-default" href="{{ path('ad_view', {id: ad.id}) }}">Отказ</a>
+                            <button type="submit" class="btn btn-success">Редактирай</button>
                         </div>
                     </div>
                 </fieldset>

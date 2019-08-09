@@ -5,14 +5,14 @@
         <div class="container">
             <div class="row">
                 {% if keyword is empty %}
-                    <div class="alert alert-danger">Please enter a keyword.</div>
+                    <div class="alert alert-danger">Въведете ключова дума..</div>
                     <div class="row">
                         <div class="col-md-12 col-sm-4 col-xs-12">
                             <div class="section-title">
 
                                 <form method="post" action="{{ path('search') }}"class="form-inline md-form mr-auto mb-4">
-                                    <input name="keyword" class="form-control mr-sm-2" type="text" placeholder="Search here.." aria-label="Search">
-                                    <button class="btn btn-outline-warning btn-rounded btn-sm my-0" type="submit">Search</button>
+                                    <input name="keyword" class="form-control mr-sm-2" type="text" placeholder="Търси тук.." aria-label="Search">
+                                    <button class="btn btn-outline-warning btn-rounded btn-sm my-0" type="submit">Търси</button>
                                 </form>
                             </div>
                         </div>
@@ -24,8 +24,8 @@
 
 
                                 <form method="post" action="{{ path('search') }}"class="form-inline md-form mr-auto mb-4">
-                                    <input name="keyword" class="form-control mr-sm-2" type="text" placeholder="Search here.." aria-label="Search">
-                                    <button class="btn btn-outline-warning btn-rounded btn-sm my-0" type="submit">Search</button>
+                                    <input name="keyword" class="form-control mr-sm-2" type="text" placeholder="Търси тук.." aria-label="Search">
+                                    <button class="btn btn-outline-warning btn-rounded btn-sm my-0" type="submit">Търси</button>
                                 </form>
 
                             </div>
@@ -43,11 +43,11 @@
                                 </div>
                                 <div class="news-body">
                                     <h3><a href="{{ path('ad_view',{'id': ad.id}) }}">{{ ad.title }}</a></h3>
-                                    <h2>Price : {{ ad.price }}€</h2>
+                                    <h2>Цена: {{ ad.price }}лв.</h2>
                                     <p class="author">
-                                        User: {{ ad.author.fullName }}
+                                        Потребител: {{ ad.author.fullName }}
                                     </p>
-                                    <a href="{{ path('ad_view',{'id': ad.id}) }}" class="btn">Read More<i
+                                    <a href="{{ path('ad_view',{'id': ad.id}) }}" class="btn">Виж повече<i
                                                 class="fa fa-angle-double-right"></i></a>
                                 </div>
                             </div>

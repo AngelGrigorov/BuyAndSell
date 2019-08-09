@@ -55,39 +55,39 @@
                                 <ul id='nav' class="nav navbar-nav">
                                     {% if app.user and app.getUser().isAdmin() %}
                                     <li>
-                                        <a href="{{ path('all_reports') }}">Reports</a>
+                                        <a href="{{ path('all_reports') }}">Доклади</a>
                                     </li>
                                     {% endif%}
                                      {% if app.user %}
                                         <li>
                                             <a href="{{ path('my_ads') }}">
-                                                My Posts
+                                                Моите обяви
                                             </a>
                                         </li>
                                         <li>
                                             <a href="{{ path('user_profile') }}">
-                                                My Profile
+                                                Моят профил
                                             </a>
                                         </li>
                                         <li>
                                             <a href="{{ path('ad_create') }}">
-                                                Post Ad
+                                                Публикувай обява
                                             </a>
                                         </li>
                                         <li>
                                             <a href="{{ path('security_logout') }}">
-                                                Logout
+                                                Излез
                                             </a>
                                         </li>
                                     {% else %}
                                         <li>
                                             <a href="{{ path('user_register') }}">
-                                                REGISTER
+                                                Регистрация
                                             </a>
                                         </li>
                                         <li>
                                             <a href="{{ path('security_login') }}">
-                                                LOGIN
+                                                Вход
                                             </a>
                                         </li>
                                     {% endif %}
@@ -117,7 +117,7 @@
     <footer>
         <div>
 
-            <button type="button" class="btn btn-dark"> <a href="{{ path('report_create') }}">Report</a></button>
+            <button type="button" class="btn btn-dark"> <a href="{{ path('report_create') }}">Докладвай</a></button>
 
 
         </div>
