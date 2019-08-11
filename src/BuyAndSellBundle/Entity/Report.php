@@ -4,6 +4,7 @@ namespace BuyAndSellBundle\Entity;
 
 use DateTime;
 use Doctrine\ORM\Mapping as ORM;
+use Symfony\Component\Validator\Constraints as Assert;
 
 /**
  * Report
@@ -23,6 +24,7 @@ class Report
     private $id;
 
     /**
+     * @Assert\NotBlank(message="Заглавието не може да е празно поле")
      * @var string
      *
      * @ORM\Column(name="title", type="string", length=255)
@@ -30,6 +32,7 @@ class Report
     private $title;
 
     /**
+     * @Assert\NotBlank(message="Съдържанието не може да е празно поле")
      * @var string
      *
      * @ORM\Column(name="content", type="string", length=255)
