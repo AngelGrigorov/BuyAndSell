@@ -127,9 +127,7 @@ class AdController extends Controller
                         $fileName
                     );
                     $ad->setImg($fileName);
-
                 }
-
             } else {
                 $ad->setImg($img);
             }
